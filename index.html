@@ -57,8 +57,9 @@
         }
         .pagination {
             display: flex;
-            justify-content: center;
-            margin-top: 10px;
+            justify-content: flex-start;
+            margin-top: 25px;
+            flex-wrap: wrap;
         }
         .pagination button {
             margin: 0 5px;
@@ -164,7 +165,12 @@
             for (let i = startIndex; i < endIndex; i++) {
                 const result = results[i];
                 const resultDiv = document.createElement('div');
-                resultDiv.textContent = `Mês ${result.month}: R$ ${result.balance}`;
+                const valor = new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                });
+
+                resultDiv.textContent = `Mês ${result.month}: ${valor.format(result.balance)}`;
                 resultsContainer.appendChild(resultDiv);
             }
 
@@ -172,7 +178,7 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const button = document.createElement('button');
-                button.textContent = i;
+                button.textContent = i < 10 ? `0${i}` : i;
                 button.className = i === currentPage ? 'active' : '';
                 button.onclick = () => {
                     currentPage = i;
