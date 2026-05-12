@@ -1,4 +1,3 @@
-```markdown
 # Calculadora de Juros Compostos
 
 Este projeto é uma calculadora de juros compostos simples, desenvolvida com HTML, CSS e JavaScript. Ele permite calcular o crescimento de um investimento ao longo do tempo, considerando valor inicial, taxa de juros, aportes regulares e período de tempo.
@@ -35,4 +34,3 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](L
 ---
 
 Desenvolvido por Lucas He Gomes.
-```
